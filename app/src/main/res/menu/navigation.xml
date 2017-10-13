@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/group_nav_main"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_inicio"
+            android:checked="true"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/nav_inicio" />
+
+        <item
+            android:id="@+id/nav_datos"
+            android:icon="@drawable/ic_profile_data"
+            android:title="@string/nav_datos" />
+
+        <item
+            android:id="@+id/nav_configuracion"
+            android:icon="@drawable/ic_menu_settings"
+            android:title="@string/nav_configuracion" />
+
+        <item
+            android:id="@+id/nav_cerrarsesion"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:title="@string/nav_cerrarsesion" />
+
+    </group>
+
+</menu>

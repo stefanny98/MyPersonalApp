@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MyPersonalApp</string>
+    <string name="primary_color_desc">#FF4081</string>
+    <string name="primary_color">#FF4081</string>
+
+    <string name="dashboard_welcome">Welcome</string>
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_datos">Mis Datos</string>
+    <string name="nav_configuracion">Configuración</string>
+    <string name="nav_cerrarsesion">Cerrar Sesión</string>
+
+    <string-array name="listArray">
+        <item>Dark Style</item>
+        <item>Light Style</item>
+        <item>Live Style</item>
+    </string-array>
+
+    <string-array name="listValues">
+        <item>dark</item>
+        <item>light</item>
+        <item>live</item>
+    </string-array>
+
+</resources>

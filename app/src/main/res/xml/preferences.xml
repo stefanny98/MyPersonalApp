@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:title="Nombres"
+        android:key="username"
+        android:summary="Editar nombres"/>
+
+    <ListPreference
+        android:title="Estilos"
+        android:summary="Selecciona un estilo personalizado"
+        android:key="styles"
+        android:defaultValue="dark"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues" />
+
+
+    <im.delight.android.languages.LanguagePreference
+        android:key="myPreferenceKey"
+        android:title="Idiomas"
+        android:enabled="true"
+        android:selectable="true" />
+
+
+</PreferenceScreen>
