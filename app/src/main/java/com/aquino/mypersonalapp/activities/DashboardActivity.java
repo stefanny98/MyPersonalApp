@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aquino.mypersonalapp.R;
+import com.aquino.mypersonalapp.model.User;
+import com.aquino.mypersonalapp.repository.UserRepository;
 
 import org.polaric.colorful.CActivity;
 import org.polaric.colorful.Colorful;
@@ -85,9 +87,12 @@ public class DashboardActivity extends CActivity {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         String username = sharedPreferences.getString("username", null);
-        String fullname = sharedPreferences.getString("fullname", null);
-        String theme = sharedPreferences.getString("theme", null);
 
+        String fullname = sharedPreferences.getString("fullname", null);
+
+        String theme = sharedPreferences.getString("theme", null);
+        Log.d("usern", username);
+        Log.d("fulln", fullname);
 
         Language.setFromPreference(this, "myPreferenceKey", true);
 

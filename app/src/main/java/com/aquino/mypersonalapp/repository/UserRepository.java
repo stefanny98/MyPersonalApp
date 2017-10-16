@@ -1,6 +1,7 @@
 package com.aquino.mypersonalapp.repository;
 
 import com.aquino.mypersonalapp.model.User;
+import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,21 +12,30 @@ import java.util.List;
 
 public class UserRepository {
 
-    public static List<User> users = new ArrayList<>();
+   // public static List<User> users = new ArrayList<>();
+    public static List<User> users = SugarRecord.listAll(User.class);
 
     static{
-        users.add(new User( "ebenites", "tecsup", "Erick Benites"));
-        users.add(new User("jfarfan", "tecsup", "Jaime Farfán"));
-        users.add(new User( "drodriguez", "tecsup", "David Rodriguez"));
+
+        User u1 = new User( "ebenites", "tecsup", "Erick Benites");
+        User u2 = new User("jfarfan", "tecsup", "Jaime Farfán");
+        User u3 = new User( "drodriguez", "tecsup", "David Rodriguez");
+
+        SugarRecord.save(u1);
+        SugarRecord.save(u2);
+        SugarRecord.save(u3);
     }
 
+
+
     public static User login(String username, String password){
+
         for (User user : users){
             if(user.getUsername().equalsIgnoreCase(username) && user.getPassword().equals(password)){
                 return user;
             }else{
                user= new User(username, password, username);
-                users.add(user);
+                SugarRecord.save(user);
                 return user;
             }
         }
@@ -41,12 +51,14 @@ public class UserRepository {
         return null;
     }
 
-    public static User agregarUsuario(String username, String password){
+    public static void update(String username, String fullname){
+        for (User user : users){
+            if(user.getUsername().equalsIgnoreCase(username)){
+                user.setFullname(fullname);
+                SugarRecord.save(user);
+            }
+        }
 
-        User user= new User(username, password, username);
-        users.add(user);
-
-        return user;
     }
 
 }

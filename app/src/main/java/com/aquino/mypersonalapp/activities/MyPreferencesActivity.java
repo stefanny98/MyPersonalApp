@@ -49,9 +49,8 @@ public class MyPreferencesActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             String value = sharedPreferences.getString(s, null);
 
-            if("username".equals(s)){
+            if("fullname".equals(s)){
 
-                editor.putString("username", value).apply();
                 editor.putString("fullname", value).apply();
 
             }else if("myPreferenceKey".equals(s)){

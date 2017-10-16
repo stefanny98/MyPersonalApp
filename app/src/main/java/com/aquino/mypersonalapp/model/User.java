@@ -1,9 +1,8 @@
 package com.aquino.mypersonalapp.model;
 
-/**
- * Created by Alumno on 9/10/2017.
- */
+import com.orm.dsl.Table;
 
+@Table
 public class User {
     private String username;
     private String password;

@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         // init SharedPreferences
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
+
+
         // username remember
         String username = sharedPreferences.getString("username", null);
         if(username != null){
@@ -69,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
 
         User user = UserRepository.login(username, password);
 
-        Toast.makeText(this, "Welcome " + username, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome " + user.getFullname(), Toast.LENGTH_SHORT).show();
 
         // Save to SharedPreferences
         SharedPreferences.Editor editor = sharedPreferences.edit();
         boolean success = editor
-                .putString("username", username)
-                .putString("fullname", username)
+                .putString("username", user.getUsername())
+                .putString("fullname", user.getFullname())
                 .putBoolean("islogged", true)
                 .putString("theme", "dark")
                 .commit();
