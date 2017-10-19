@@ -4,6 +4,7 @@ import com.orm.dsl.Table;
 
 @Table
 public class User {
+
     private String username;
     private String password;
     private String fullname;
@@ -11,8 +12,7 @@ public class User {
     public User() {
     }
 
-    public User ( String username, String password, String fullname) {
-
+    public User (String username, String password, String fullname) {
         this.username = username;
         this.password = password;
         this.fullname = fullname;
@@ -51,5 +51,6 @@ public class User {
                 ", fullname='" + fullname + '\'' +
                 '}';
     }
+
 
 }

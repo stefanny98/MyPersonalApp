@@ -1,6 +1,5 @@
 package com.aquino.mypersonalapp.activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -10,20 +9,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aquino.mypersonalapp.R;
-import com.aquino.mypersonalapp.model.User;
-import com.aquino.mypersonalapp.repository.UserRepository;
+import com.vstechlab.easyfonts.EasyFonts;
 
 import org.polaric.colorful.CActivity;
 import org.polaric.colorful.Colorful;
-
-import im.delight.android.languages.Language;
 
 public class DashboardActivity extends CActivity {
 
@@ -40,6 +34,7 @@ public class DashboardActivity extends CActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,8 +75,6 @@ public class DashboardActivity extends CActivity {
             }
         });
 
-
-
         usernameText = (TextView)findViewById(R.id.fullname_text);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -91,10 +84,14 @@ public class DashboardActivity extends CActivity {
         String fullname = sharedPreferences.getString("fullname", null);
 
         String theme = sharedPreferences.getString("theme", null);
-        Log.d("usern", username);
-        Log.d("fulln", fullname);
 
-        Language.setFromPreference(this, "myPreferenceKey", true);
+        String fonts = sharedPreferences.getString("fonts", null);
+
+        if(fonts.equals("freedom")){
+            usernameText.setTypeface(EasyFonts.freedom(this));
+        }else if (fonts.equals("tan")){
+            usernameText.setTypeface(EasyFonts.tangerineBold(this));
+        }
 
         if ("dark".equals(theme)) {
 

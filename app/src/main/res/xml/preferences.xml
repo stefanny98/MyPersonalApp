@@ -8,17 +8,18 @@
     <ListPreference
         android:title="Estilos"
         android:summary="Selecciona un estilo personalizado"
-        android:key="styles"
+        android:key="theme"
         android:defaultValue="dark"
         android:entries="@array/listArray"
         android:entryValues="@array/listValues" />
 
-
-    <im.delight.android.languages.LanguagePreference
-        android:key="myPreferenceKey"
-        android:title="Idiomas"
-        android:enabled="true"
-        android:selectable="true" />
+    <ListPreference
+        android:title="Fonts"
+        android:summary="Selecciona un estilo personalizado"
+        android:key="fonts"
+        android:defaultValue="default"
+        android:entries="@array/fontsArray"
+        android:entryValues="@array/fontsValues" />
 
 
 </PreferenceScreen>

@@ -1,28 +1,11 @@
 package com.aquino.mypersonalapp.activities;
-
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.preference.PreferenceFragment;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-
 import com.aquino.mypersonalapp.R;
-import com.ftinc.scoop.Scoop;
+import com.aquino.mypersonalapp.repository.UserRepository;
 
-import org.polaric.colorful.Colorful;
-
-import java.io.Serializable;
-import java.sql.Wrapper;
-
-import im.delight.android.languages.Language;
-import im.delight.android.languages.LanguageList;
-
-import static android.graphics.Color.GREEN;
 
 public class MyPreferencesActivity extends AppCompatActivity {
 
@@ -50,21 +33,17 @@ public class MyPreferencesActivity extends AppCompatActivity {
             String value = sharedPreferences.getString(s, null);
 
             if("fullname".equals(s)){
-
+                String username = sharedPreferences.getString("username", null);
+                UserRepository.update(username, value);
                 editor.putString("fullname", value).apply();
 
-            }else if("myPreferenceKey".equals(s)){
+            }else if("fonts".equals(s)){
 
-            }else if("styles".equals(s)){
+                editor.putString("fonts", value).apply();
 
-                if (value.equals("dark")) {
-                    editor.putString("theme", "dark").apply();
-                } else if (value.equals("light")) {
-                    editor.putString("theme", "light").apply();
-                }else{
-                    editor.putString("theme", "live").apply();
-                }
+            }else if("theme".equals(s)){
 
+                    editor.putString("theme", value).apply();
             }
         }
 

@@ -23,13 +23,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textStyle="bold"
-        tools:text="Erick Benites"/>
+        android:layout_marginBottom="20dp"
+        tools:text=""/>
 
-    <TextView
-        android:id="@+id/menu_email"
-        style="@style/Widget.AppCompat.Spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        tools:text="ebenites@tecsup.edu.pe"/>
 </LinearLayout>

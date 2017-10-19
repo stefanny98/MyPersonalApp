@@ -20,5 +20,16 @@
         <item>light</item>
         <item>live</item>
     </string-array>
+    <string-array name="fontsArray">
+        <item>Default</item>
+        <item>Freedom</item>
+        <item>Tan</item>
+    </string-array>
+
+    <string-array name="fontsValues">
+        <item>default</item>
+        <item>freedom</item>
+        <item>tan</item>
+    </string-array>
 
 </resources>
